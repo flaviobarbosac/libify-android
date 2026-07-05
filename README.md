@@ -16,6 +16,7 @@ App Android do Libify. O código web fica em `../../frontend/`; este repositóri
 ```powershell
 cd C:\Projects\Libify\mobile\scripts
 .\setup-android-dev.ps1 -PersistUser
+.\run-android-dev.ps1 -StartEmulator
 ```
 
 ## Google Sign-In (obrigatório)
@@ -49,6 +50,32 @@ cd C:\Projects\Libify\mobile\android
 ```
 
 APK: `app/build/outputs/apk/debug/app-debug.apk`
+
+## Rodar no emulador (recomendado)
+
+AVD padrao: **LibifyPixel6** (Pixel 6, API 35). Criar uma vez:
+
+```powershell
+cd C:\Projects\Libify\mobile\scripts
+.\setup-android-dev.ps1
+sdkmanager "emulator" "system-images;android-35;google_apis_playstore;x86_64"
+echo no | avdmanager create avd -n LibifyPixel6 -k "system-images;android-35;google_apis_playstore;x86_64" -d "pixel_6"
+```
+
+Build + instalar + abrir:
+
+```powershell
+.\run-android-dev.ps1 -StartEmulator
+```
+
+### Troubleshooting emulador (Windows)
+
+| Problema | Solucao |
+|----------|---------|
+| Emulador fecha sozinho | Preferir **Device Manager** do Android Studio ou `-gpu swiftshader_indirect` |
+| `adb` nao encontrado | Rode `setup-android-dev.ps1` e reabra o terminal |
+| Tela preta / GPU | Android Studio > AVD > Edit > Graphics: **Software** |
+| Login Google falha | Confira SHA-1 debug com `get-debug-sha1.ps1` no Google Cloud |
 
 ## Fluxo de telas
 
