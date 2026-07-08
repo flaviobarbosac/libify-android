@@ -14,7 +14,7 @@ App Android do Clampfy. O código web fica em `../../frontend/`; este repositór
 ## Setup (Windows)
 
 ```powershell
-cd C:\Projects\Libify\mobile\scripts
+cd C:\Projects\Clampfy\mobile\scripts
 .\setup-android-dev.ps1 -PersistUser
 .\run-android-dev.ps1 -StartEmulator
 ```
@@ -26,7 +26,7 @@ cd C:\Projects\Libify\mobile\scripts
    - SHA-1 debug:
 
 ```powershell
-cd C:\Projects\Libify\mobile\scripts
+cd C:\Projects\Clampfy\mobile\scripts
 .\get-debug-sha1.ps1
 ```
 
@@ -35,7 +35,7 @@ cd C:\Projects\Libify\mobile\scripts
 ## Sincronizar web → Android
 
 ```powershell
-cd C:\Projects\Libify\frontend
+cd C:\Projects\Clampfy\frontend
 npm run cap:sync
 npm run cap:open
 ```
@@ -45,7 +45,7 @@ O build Android usa `.env.android` (API dev + `VITE_PLATAFORMA=android`).
 ## Build debug
 
 ```powershell
-cd C:\Projects\Libify\mobile\android
+cd C:\Projects\Clampfy\mobile\android
 .\gradlew assembleDebug
 ```
 
@@ -56,7 +56,7 @@ APK: `app/build/outputs/apk/debug/app-debug.apk`
 AVD padrao: **ClampfyPixel6** (Pixel 6, API 35). Criar uma vez:
 
 ```powershell
-cd C:\Projects\Libify\mobile\scripts
+cd C:\Projects\Clampfy\mobile\scripts
 .\setup-android-dev.ps1
 sdkmanager "emulator" "system-images;android-35;google_apis_playstore;x86_64"
 echo no | avdmanager create avd -n ClampfyPixel6 -k "system-images;android-35;google_apis_playstore;x86_64" -d "pixel_6"
