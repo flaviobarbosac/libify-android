@@ -1,6 +1,6 @@
-# Libify — Android (Capacitor)
+# Clampfy — Android (Capacitor)
 
-App Android do Libify. O código web fica em `../../frontend/`; este repositório contém o **projeto Gradle/Capacitor**.
+App Android do Clampfy. O código web fica em `../../frontend/`; este repositório contém o **projeto Gradle/Capacitor**.
 
 ## Pré-requisitos
 
@@ -22,7 +22,7 @@ cd C:\Projects\Libify\mobile\scripts
 ## Google Sign-In (obrigatório)
 
 1. No [Google Cloud Console](https://console.cloud.google.com/), crie credencial **OAuth Android**:
-   - Package: `com.libify.app`
+   - Package: `com.clampfy.app`
    - SHA-1 debug:
 
 ```powershell
@@ -53,13 +53,13 @@ APK: `app/build/outputs/apk/debug/app-debug.apk`
 
 ## Rodar no emulador (recomendado)
 
-AVD padrao: **LibifyPixel6** (Pixel 6, API 35). Criar uma vez:
+AVD padrao: **ClampfyPixel6** (Pixel 6, API 35). Criar uma vez:
 
 ```powershell
 cd C:\Projects\Libify\mobile\scripts
 .\setup-android-dev.ps1
 sdkmanager "emulator" "system-images;android-35;google_apis_playstore;x86_64"
-echo no | avdmanager create avd -n LibifyPixel6 -k "system-images;android-35;google_apis_playstore;x86_64" -d "pixel_6"
+echo no | avdmanager create avd -n ClampfyPixel6 -k "system-images;android-35;google_apis_playstore;x86_64" -d "pixel_6"
 ```
 
 Build + instalar + abrir:

@@ -1,4 +1,4 @@
-package com.libify.app;
+package com.clampfy.app;
 
 import com.getcapacitor.BridgeActivity;
 
